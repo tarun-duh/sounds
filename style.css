@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+}
+.sequencer{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+i,
+svg{
+    pointer-events: none;
+}
+.kick-pad,
+.snare-pad,
+.hihat-pad{
+width: 5rem;
+height: 5rem;
+margin: 1rem 0.5rem;
+cursor: pointer;
+}
+.kick-pad{
+    background:rgb(199, 95, 184) ;
+}
+.hihat-pad{
+    background:rgb(116, 171, 113) ;
+}
+.snare-pad{
+    background:rgb(199, 90, 90) ;
+}
+.kick-track,
+.hihat-track,
+.snare-track{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-top: 5rem;
+}
+.kick,
+.snare,
+.hihat{
+    display: flex;
+}
+.controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    margin: 0rem 2rem;
+}
+.controls button{
+    padding:1rem;
+    border: none;
+    background: rgb(23, 22, 22);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.5 ease;
+
+}
+.pad{
+    transition: all 0.5s ease;
+}
+.kick-pad.active{
+    
+}
