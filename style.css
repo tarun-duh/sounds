@@ -26,13 +26,22 @@ margin: 1rem 0.5rem;
 cursor: pointer;
 }
 .kick-pad{
-    background:rgb(199, 95, 184) ;
+    background:rgb(198, 115, 185) ;
 }
 .hihat-pad{
-    background:rgb(116, 171, 113) ;
+    background:rgb(125, 169, 123) ;
 }
 .snare-pad{
-    background:rgb(199, 90, 90) ;
+    background:rgb(196, 124, 124) ;
+}
+.snare-pad.active{
+    background:rgb(195, 38, 38) ;
+}
+.hihat-pad.active{
+    background:rgb(68, 170, 62) ;
+}
+.kick-pad.active{
+    background:rgb(199, 47, 176) ;
 }
 .kick-track,
 .hihat-track,
@@ -68,6 +77,16 @@ cursor: pointer;
 .pad{
     transition: all 0.5s ease;
 }
-.kick-pad.active{
-    
+.play{
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    background: rgb(23, 22, 22);
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 2.2rem;
+}
+select{
+    padding: 1rem;
+    font-size: 1rem;
 }
