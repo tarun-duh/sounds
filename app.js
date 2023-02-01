@@ -27,7 +27,7 @@ class DrumKit {
           this.snareSound.currentTime = 0;
           this.snareSound.play();
         }
-        if (bar.classList.contains(`kick-pad`)) {
+        if (bar.classList.contains(`hihat-pad`)) {
           this.hihatSound.currentTime = 0;
           this.hihatSound.play();
         }
