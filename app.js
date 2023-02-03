@@ -2,12 +2,16 @@ class DrumKit {
   constructor() {
     this.pad = document.querySelectorAll(".pad");
     this.playBtn = document.querySelector(".play");
+    this.currenKick = `./allSounds/kick-classic.wav`;
+    this.currenSnare = `./allSounds/snare-acoustic01.wav`;
+    this.currenHihat = `./allSounds/hihat-acoustic01.wav`;
     this.snareSound = document.querySelector(".snare-sound");
     this.hihatSound = document.querySelector(".hihat-sound");
     this.kickSound = document.querySelector(".kick-sound");
     this.index = 0;
     this.bpm = 120;
     this.isPlaying = null;
+    this.select = document.querySelectorAll("select");
   }
   activePad() {
     this.classList.toggle("active");
@@ -15,7 +19,7 @@ class DrumKit {
   repeat() {
     let step = this.index % 8;
     const activeBars = document.querySelectorAll(`.b${step}`);
-    console.log(step);
+
     ///loop over pads
     activeBars.forEach((bar) => {
       bar.style.animation = `playTrack 0.3s alternate ease-in-out 2`;
@@ -56,8 +60,25 @@ class DrumKit {
       this.playBtn.classList.remove("active");
     }
   }
+  changeSound(e) {
+    const selectionName = e.target.name;
+    const selectionValue = e.target.value;
+    console.log(selectionValue, selectionName);
+    switch (selectionName) {
+      case "kick-select":
+        this.kickSound.src = selectionValue;
+        break;
+      case "snare-select":
+        this.snareSound.src = selectionValue;
+        break;
+      case "hihat-select":
+        this.hihatSound.src = selectionValue;
+        break;
+    }
+  }
 }
 const drumkit = new DrumKit();
+//eventlustner
 drumkit.pad.forEach(function (pad) {
   pad.addEventListener("click", drumkit.activePad);
   pad.addEventListener(`animationend`, function () {
@@ -67,4 +88,9 @@ drumkit.pad.forEach(function (pad) {
 drumkit.playBtn.addEventListener("click", function () {
   drumkit.updateBtn();
   drumkit.start();
+});
+drumkit.select.forEach((Select) => {
+  Select.addEventListener("click", function (e) {
+    drumkit.changeSound(e);
+  });
 });
