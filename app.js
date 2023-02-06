@@ -42,7 +42,6 @@ class DrumKit {
   start() {
     const interval = (60 / this.bpm) * 1000;
     //Check if it's playing
-
     if (this.isPlaying) {
       //Clear the interval
       clearInterval(this.isPlaying);
